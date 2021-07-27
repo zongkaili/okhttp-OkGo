@@ -16,17 +16,18 @@
 package com.lzy.demo.okdownload;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.lzy.demo.R;
 import com.lzy.demo.base.BaseActivity;
 import com.lzy.okserver.OkDownload;
 import com.lzy.okserver.task.XExecutor;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -40,8 +41,10 @@ import butterknife.OnClick;
  */
 public class DownloadAllActivity extends BaseActivity implements XExecutor.OnAllTaskEndListener {
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.recyclerView) RecyclerView recyclerView;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     private DownloadAdapter adapter;
     private OkDownload okDownload;

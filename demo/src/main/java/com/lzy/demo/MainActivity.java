@@ -16,15 +16,16 @@
 package com.lzy.demo;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.widget.Toolbar;
-import android.util.Pair;
 import android.view.View;
 
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.util.Pair;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.viewpager.widget.ViewPager;
+
+import com.google.android.material.tabs.TabLayout;
 import com.lzy.demo.base.BaseActivity;
 import com.lzy.demo.okdownload.OkDownloadFragment;
 import com.lzy.demo.okgo.OkGoFragment;
@@ -35,7 +36,7 @@ import com.lzy.demo.okupload.OkUploadFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnClick;
 
 /**
@@ -49,9 +50,12 @@ import butterknife.OnClick;
  */
 public class MainActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.viewPager) ViewPager viewPager;
-    @Bind(R.id.tab) TabLayout tab;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.viewPager)
+    ViewPager viewPager;
+    @BindView(R.id.tab)
+    TabLayout tab;
 
     private List<Pair<String, Fragment>> items;
 

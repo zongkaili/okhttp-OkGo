@@ -43,7 +43,7 @@ public class GlideImageLoader implements ImageLoader, NineGridView.ImageLoader {
         Glide.with(context).load(url)//
                 .placeholder(R.drawable.ic_default_color)// 这行貌似是glide的bug,在部分机型上会导致第一次图片不在中间
                 .error(R.drawable.ic_default_color)//
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)//
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)//
                 .into(imageView);
     }
 
@@ -57,7 +57,7 @@ public class GlideImageLoader implements ImageLoader, NineGridView.ImageLoader {
         Glide.with(activity).load(new File(path))//
                 .placeholder(R.drawable.ic_default_color)//
                 .error(R.drawable.ic_default_color)//
-                .diskCacheStrategy(DiskCacheStrategy.SOURCE)//
+                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)//
                 .into(imageView);
     }
 

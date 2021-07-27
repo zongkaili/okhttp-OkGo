@@ -18,16 +18,17 @@ package com.lzy.demo;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
 
+import androidx.appcompat.widget.Toolbar;
+
 import com.lzy.demo.base.BaseActivity;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 /**
  * ================================================
@@ -43,9 +44,10 @@ public class WebActivity extends BaseActivity {
     public final static String URL = "url";
     public final static String TITLE = "title";
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.pb) ProgressBar pb;
-    @Bind(R.id.webView) WebView webView;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.pb) ProgressBar pb;
+    @BindView(R.id.webView) WebView webView;
 
     public static void runActivity(Context context, String title, String url) {
         Intent intent = new Intent(context, WebActivity.class);

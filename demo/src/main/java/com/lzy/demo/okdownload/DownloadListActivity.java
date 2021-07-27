@@ -21,12 +21,14 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -48,7 +50,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -65,9 +67,11 @@ public class DownloadListActivity extends BaseActivity {
 
     private static final int REQUEST_PERMISSION_STORAGE = 0x01;
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.targetFolder) TextView folder;
-    @Bind(R.id.recyclerView) RecyclerView recyclerView;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.targetFolder) TextView folder;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
 
     private List<ApkModel> apks;
     private DownloadListAdapter adapter;
@@ -162,10 +166,10 @@ public class DownloadListActivity extends BaseActivity {
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        @Bind(R.id.name) TextView name;
-        @Bind(R.id.priority) TextView priority;
-        @Bind(R.id.icon) ImageView icon;
-        @Bind(R.id.download) Button download;
+        @BindView(R.id.name) TextView name;
+        @BindView(R.id.priority) TextView priority;
+        @BindView(R.id.icon) ImageView icon;
+        @BindView(R.id.download) Button download;
 
         private ApkModel apk;
 
